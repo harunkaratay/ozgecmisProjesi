@@ -44,7 +44,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#about">Anasayfa</a>
+                <a class="nav-link js-scroll-trigger" href="#dashboard">Anasayfa</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#education">Egitim</a>
@@ -62,7 +62,7 @@
 
 <div class="container-fluid p-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="dashboard">
         <div class="my-auto">
             <h1 class="mb-0">Muhammed Harun Karatay</span>
             </h1>
@@ -116,7 +116,7 @@
                     <div>Yazılım Mühendisliği</div>
                 </div>
                 <div class="resume-date text-md-right">
-                    <span class="text-primary">2023-2027</span>
+                    <div class="text-primary">2023-2027</div>
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
                 <div class="resume-content mr-auto">
                     <h3 class="mb-0">Necip Fazıl Kısakürek Lisesi</h3></div>
                 <div class="resume-date text-md-right">
-                    <span class="text-primary">2018-2022</span>
+                    <div class="text-primary">2018-2022</div>
                 </div>
             </div>
 
