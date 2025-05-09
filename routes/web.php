@@ -9,13 +9,10 @@ Route::get('/', function () {
 
 
 
-
-
-
-
 Route::get('/anasayfa', function () {
-    return view('layouts.app');
+    return view('panel.cv');
 });
+
 
 
 
