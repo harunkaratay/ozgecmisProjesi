@@ -6,12 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
-Route::get('/anasayfa', function () {
-    return view('panel.cv');
+Route::get('/welcome', function () {
+    return view('admin.welcome.cv');
 });
+
 
 
 
