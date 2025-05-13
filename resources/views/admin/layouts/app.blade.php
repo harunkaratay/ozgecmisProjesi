@@ -49,9 +49,7 @@
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#education">Egitim</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
-            </li>
+            <a class="nav-link" href="{{ route('blogIndex') }}">Blog</a>
         </ul>
     </div>
 </nav>
