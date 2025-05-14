@@ -12,15 +12,24 @@ class BlogController extends Controller
     }
 
     public function addPage(Request $request){
-        $blog = new Blog();
-        $blog->title = $request->title;
-        $blog->summary = $request->summary;
-        $blog->content = $request->content;
-        $blog->save();
-        return redirect('/blogIndex')->with('success', 'Blog başarıyla eklendi.');
+        $blogs = new Blog();
+        $blogs->title = $request->title;
+        $blogs->summary = $request->summary;
+        $blogs->content = $request->content;
+        $blogs->save();
+        return redirect()->route('blogIndex')->with('success', 'Blog başarıyla eklendi.');
     }
     public function indexPage(){
-
-        return view('admin.blog.index');
+        $blogs = Blog::get();
+        return view('admin.blog.index' , compact('blogs'));
+    }
+    public function deletePage($id){
+        $blogs = Blog::find($id);
+        $blogs->delete();
+        return redirect()->route('blogIndex')->with('success', 'Blog başarıyla silindi.');
+    }
+    public function showPage($id){
+        $blogs = Blog::find($id);
+        return view('admin.blog.show' , compact('blogs'));
     }
 }
