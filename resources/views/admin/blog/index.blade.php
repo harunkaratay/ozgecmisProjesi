@@ -4,7 +4,9 @@
         <div class="card">
             <div class="card-header">
                 <h2 class="mb-5">Bloglar</h2>
+                @auth()
                 <a href="{{route('blogCreate')}}" class="btn btn-primary mb-3">Blog Ekle</a>
+                @endauth
                 @if(session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
                         {{ session('success') }}
@@ -27,6 +29,7 @@
                             </div>
                         </div>
                     @endforeach
+                        <a href="/welcome" class="ml-4">Anasayfaya dön</a>
                 </div>
             </div>
         </div>

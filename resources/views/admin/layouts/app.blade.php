@@ -30,6 +30,11 @@
 <body id="page-top">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    @guest
+        <div style="position: absolute; top: 10px; margin: 10px; z-index: 1000;">
+            <a href="{{ route('login') }}" class="btn btn-light btn-sm">Giriş Yap</a>
+        </div>
+    @endguest
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Start Bootstrap</span>
         <span class="d-none d-lg-block">
