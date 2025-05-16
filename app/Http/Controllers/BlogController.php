@@ -28,8 +28,4 @@ class BlogController extends Controller
         $blogs->delete();
         return redirect()->route('blogIndex')->with('success', 'Blog başarıyla silindi.');
     }
-    public function showPage($id){
-        $blogs = Blog::find($id);
-        return view('admin.blog.show' , compact('blogs'));
-    }
 }

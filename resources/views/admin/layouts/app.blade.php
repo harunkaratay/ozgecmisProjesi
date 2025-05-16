@@ -30,11 +30,14 @@
 <body id="page-top">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    @guest
-        <div style="position: absolute; top: 10px; margin: 10px; z-index: 1000;">
-            <a href="{{ route('login') }}" class="btn btn-light btn-sm">Giriş Yap</a>
-        </div>
-    @endguest
+    <div class="text-right">
+        @auth
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button class="btn btn-sm btn-outline-dark">Çıkış Yap</button>
+            </form>
+        @endauth
+    </div>
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Start Bootstrap</span>
         <span class="d-none d-lg-block">
@@ -54,7 +57,9 @@
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#education">Egitim</a>
             </li>
-            <a class="nav-link" href="{{ route('blogIndex') }}">BLOGLAR</a>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#blogs">Bloglar</a>
+            </li>
         </ul>
     </div>
 </nav>

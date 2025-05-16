@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.adminApp')
 
 @section('content')
 
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     @endforeach
-                        <a href="/home" class="d-flex justify-content-end btn btn-link">Anasayfaya dön</a>
+                        <a href="/home" class="d-flex justify-content-end btn btn-link">Anasayfaya Dön</a>
                 </div>
             </div>
         </div>

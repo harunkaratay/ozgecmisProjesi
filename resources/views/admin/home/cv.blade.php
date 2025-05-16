@@ -68,4 +68,37 @@
         </div>
     </section>
 
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="blogs">
+        <div class="my-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="mb-5">Bloglar</h2>
+                    @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        @foreach($blogs as $b)
+                            <div class="card mb-4 shadow-sm p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">{{ $b->title }}</h5>
+                                    <p class="card-text">{{ $b->summary }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="{{route('blogShow',$b->id)}}" class="btn btn-sm btn-outline-primary">Devamını oku</a>
+                                        @auth
+                                        <a href="{{route('blogDelete',$b->id)}}" class="btn btn-outline-danger">Sil</a>
+                                        @endauth
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 @endsection
