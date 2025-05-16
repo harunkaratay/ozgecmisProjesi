@@ -21,7 +21,7 @@
                                 <h5 class="card-title fw-bold">{{ $b->title }}</h5>
                                 <p class="card-text">{{ $b->summary }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <a href="{{route('blogShow',$b->id)}}" class="btn btn-sm btn-primary">Devamını oku</a>
+                                    <a href="{{route('blogShow',$b->id)}}" class="btn btn-sm btn-outline-primary">Devamını oku</a>
                                     <div>
                                         <a href="{{route('blogDelete',$b->id)}}" class="btn btn-outline-danger">Sil</a>
                                     </div>
@@ -29,9 +29,9 @@
                             </div>
                         </div>
                     @endforeach
-                        <a href="/welcome" class="ml-4">Anasayfaya dön</a>
+                        <a href="/welcome" class="d-flex justify-content-end">Anasayfaya dön</a>
                 </div>
             </div>
         </div>
 
-    @endsection
+@endsection

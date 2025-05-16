@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/welcome', function () {
-    return view('admin.welcome.cv');
+Route::get('/home', function () {
+    return view('admin.home.cv');
 });
 
 
