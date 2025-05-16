@@ -12,9 +12,9 @@
         <div class="card-text" style="white-space: pre-wrap;">
             {!! nl2br(e($blogs->content)) !!}
         </div>
-        <div class="mt-4">
+        <div class="mt-3 mb-2 d-flex justify-content-between align-items-center">
             <a href="{{ route('blogIndex') }}" class="btn btn-secondary">Geri Dön</a>
+            <a href="/home" class="btn btn-link">Anasayfaya dön</a>
         </div>
     </div>
-
 @endsection
