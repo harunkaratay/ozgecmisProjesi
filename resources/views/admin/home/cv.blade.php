@@ -69,7 +69,6 @@
     </section>
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="blogs">
-        <div class="my-auto">
             <div class="card">
                 <div class="card-header">
                     <h2 class="mb-5">Bloglar</h2>
@@ -81,6 +80,9 @@
                 </div>
                 <div class="card-body">
                     <div class="card-body">
+                        @if($blogs->isEmpty())
+                            <p>Henüz yayınlanan bir blog yok</p>
+                        @else
                         @foreach($blogs as $b)
                             <div class="card mb-4 shadow-sm p-3">
                                 <div class="card-body">
@@ -95,10 +97,13 @@
                                 </div>
                             </div>
                         @endforeach
+                        @endif
+                            @auth()
+                            <a href="/admin/blog/index" class="d-flex justify-content-end btn btn-link">Admin Paneline Dön</a>
+                            @endauth
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
 @endsection

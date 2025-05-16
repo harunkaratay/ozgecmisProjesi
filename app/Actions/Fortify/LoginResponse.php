@@ -8,6 +8,6 @@ class LoginResponse implements LoginResponseContract
 {
     public function toResponse($request)
     {
-        return redirect()->intended('/home');
+        return redirect()->intended('/admin/blog/index');
     }
 }
