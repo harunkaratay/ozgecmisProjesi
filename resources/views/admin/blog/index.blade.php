@@ -1,6 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
+
         <div class="card">
             <div class="card-header">
                 <h2 class="mb-5">Bloglar</h2>
@@ -29,7 +30,7 @@
                             </div>
                         </div>
                     @endforeach
-                        <a href="/welcome" class="d-flex justify-content-end">Anasayfaya dön</a>
+                        <a href="/home" class="d-flex justify-content-end">Anasayfaya dön</a>
                 </div>
             </div>
         </div>
