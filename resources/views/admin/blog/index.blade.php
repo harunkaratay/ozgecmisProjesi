@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     @endforeach
-                        <a href="/home" class="d-flex justify-content-end">Anasayfaya dön</a>
+                        <a href="/home" class="d-flex justify-content-end btn btn-link">Anasayfaya dön</a>
                 </div>
             </div>
         </div>
