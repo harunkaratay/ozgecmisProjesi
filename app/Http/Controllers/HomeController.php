@@ -9,11 +9,11 @@ class HomeController extends Controller
 {
     public function indexBlog(){
         $blogs = Blog::get();
-        return view('admin.home.cv' , compact('blogs'));
+        return view('public.home.cv' , compact('blogs'));
     }
 
     public function showBlog($id){
         $blogs = Blog::find($id);
-        return view('admin.home.show' , compact('blogs'));
+        return view('public.home.show' , compact('blogs'));
     }
 }

@@ -23,6 +23,10 @@ class BlogController extends Controller
         $blogs = Blog::get();
         return view('admin.blog.index' , compact('blogs'));
     }
+    public function showBlog($id){
+        $blogs = Blog::find($id);
+        return view('admin.blog.show' , compact('blogs'));
+    }
     public function deletePage($id){
         $blogs = Blog::find($id);
         $blogs->delete();
