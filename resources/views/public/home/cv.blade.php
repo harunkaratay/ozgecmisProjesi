@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('public.layouts.app')
 
 @section('content')
 
@@ -69,41 +69,45 @@
     </section>
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="blogs">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="mb-5">Bloglar</h2>
-                    @if(session('success'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-                </div>
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-5">Bloglar</h2>
+                @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+            </div>
+            <div class="card-body">
                 <div class="card-body">
-                    <div class="card-body">
-                        @if($blogs->isEmpty())
-                            <p>Henüz yayınlanan bir blog yok</p>
-                        @else
+                    @if($blogs->isEmpty())
+                        <p>Henüz yayınlanan bir blog yok</p>
+                    @else
                         @foreach($blogs as $b)
                             <div class="card mb-4 shadow-sm p-3">
                                 <div class="card-body">
                                     <h5 class="card-title fw-bold">{{ $b->title }}</h5>
                                     <p class="card-text">{{ $b->summary }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a href="{{route('blogShow',$b->id)}}" class="btn btn-sm btn-outline-primary">Devamını oku</a>
+                                        <a href="{{route('blogShow',$b->id)}}" class="btn btn-sm btn-outline-primary">Devamını
+                                            oku</a>
                                         @auth
-                                        <a href="{{route('blogDelete',$b->id)}}" class="btn btn-outline-danger">Sil</a>
+                                            <a href="{{route('blogDelete',$b->id)}}"
+                                               class="btn btn-outline-danger">Sil</a>
                                         @endauth
                                     </div>
                                 </div>
                             </div>
                         @endforeach
-                        @endif
-                            @auth()
-                            <a href="/admin/blog/index" class="d-flex justify-content-end btn btn-link">Admin Paneline Dön</a>
-                            @endauth
-                    </div>
+                    @endif
+                    @auth()
+                            <div class="d-flex justify-content-end mt-3">
+                                <a href="/admin/blog/index" class="btn btn-primary">Admin Paneline Dön</a>
+                            </div>
+                    @endauth
                 </div>
             </div>
+        </div>
     </section>
 
 @endsection

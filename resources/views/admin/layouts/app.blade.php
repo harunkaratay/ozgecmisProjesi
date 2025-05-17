@@ -34,7 +34,7 @@
         @auth
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button class="btn btn-sm btn-outline-dark">Çıkış Yap</button>
+                <button class="btn btn-sm btn-dark">Çıkış Yap</button>
             </form>
         @endauth
     </div>
@@ -51,15 +51,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#dashboard">Anasayfa</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#education">Egitim</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#blogs">Bloglar</a>
-            </li>
+            <a class="nav-link" href="{{ route('blogIndex') }}">BLOGLAR</a>
+            <a class="nav-link" href="{{ route('commentsIndex') }}">YORUMLAR</a>
         </ul>
     </div>
 </nav>
