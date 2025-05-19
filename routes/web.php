@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommentController;
+use Illuminate\Support\Facades\Auth;
 
 //default
 Route::get('/', function () {
@@ -19,6 +20,13 @@ Route::get('/home/blog/show/{id}', [HomeController::class, 'showBlog'])->name('b
 Route::get('/admin', function () {
     return view('auth.login');
 });
+
+//logout route
+
+Route::get('/cikis', function () {
+    Auth::logout();
+    return redirect('/home'); // yönlendirilmek istenen route
+})->name('logout');
 
 //yorum routes
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');

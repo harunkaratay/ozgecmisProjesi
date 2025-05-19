@@ -34,7 +34,7 @@
         @auth
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button class="btn btn-sm btn-dark">Çıkış Yap</button>
+                <a href="{{ route('logout') }}" class="btn btn-danger">Çıkış Yap</a>
             </form>
         @endauth
     </div>
