@@ -37,7 +37,4 @@
                 @endif
             </div>
         </div>
-        <div class="d-flex justify-content-end mt-4 mb-3">
-            <a href="/home" class="btn btn-primary">Anasayfaya dön</a>
-        </div>
 @endsection

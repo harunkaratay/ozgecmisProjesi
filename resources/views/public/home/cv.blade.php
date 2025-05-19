@@ -89,22 +89,12 @@
                                     <h5 class="card-title fw-bold">{{ $b->title }}</h5>
                                     <p class="card-text">{{ $b->summary }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a href="{{route('blogShow',$b->id)}}" class="btn btn-sm btn-outline-primary">Devamını
-                                            oku</a>
-                                        @auth
-                                            <a href="{{route('blogDelete',$b->id)}}"
-                                               class="btn btn-outline-danger">Sil</a>
-                                        @endauth
+                                        <a href="{{route('blogShow',$b->id)}}" class="btn btn-sm btn-outline-primary">Devamını oku</a>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                     @endif
-                    @auth()
-                            <div class="d-flex justify-content-end mt-3">
-                                <a href="/admin/blog/index" class="btn btn-primary">Admin Paneline Dön</a>
-                            </div>
-                    @endauth
                 </div>
             </div>
         </div>

@@ -55,6 +55,9 @@
             <a class="nav-link" href="{{ route('commentsIndex') }}">YORUMLAR</a>
         </ul>
     </div>
+    <div class="d-flex justify-content-end mt-3">
+        <a href="/home" class="btn btn-primary">Anasayfaya Dön</a>
+    </div>
 </nav>
 <!-- Hava Durumu -->
 <div id="weather-info"

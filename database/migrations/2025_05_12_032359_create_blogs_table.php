@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('title');
             $table->text('summary');
             $table->longText('content');
-            $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('set null');
             $table->softDeletes();
             $table->timestamps();
         });

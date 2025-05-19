@@ -34,7 +34,7 @@
         @auth
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button class="btn btn-sm btn-outline-dark">Çıkış Yap</button>
+                <a href="{{ route('logout') }}" class="btn btn-danger">Çıkış Yap</a>
             </form>
         @endauth
     </div>
@@ -62,6 +62,11 @@
             </li>
         </ul>
     </div>
+    @auth()
+        <div class="d-flex justify-content-end mt-3">
+            <a href="/admin/blog/index" class="btn btn-primary">Admin Paneline Dön</a>
+        </div>
+    @endauth
 </nav>
 <!-- Hava Durumu -->
 <div id="weather-info"
