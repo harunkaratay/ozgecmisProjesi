@@ -12,6 +12,6 @@ class Blog extends Model
     protected $table = 'blogs';
 
     public function comments(){
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class, 'blog_id');
     }
 }

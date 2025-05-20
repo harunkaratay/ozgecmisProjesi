@@ -9,7 +9,7 @@
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
         @if($comments->isEmpty())
-            <p>herhangi bir bloga henüz yorum yapılmamıştır</p>
+            <p>Henüz yorum yapılmamıştır</p>
             @else
             <table class="table table-bordered table-hover mt-3 mb-3">
                 <thead>

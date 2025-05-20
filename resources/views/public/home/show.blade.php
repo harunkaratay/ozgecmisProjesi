@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <div class="container mt-5">
         <div class="card shadow rounded-3">
             <div class="card-body">
@@ -19,7 +20,7 @@
     <div class="card">
         <div class="card-header">
             <h4>Yorumlar</h4>
-            <div class="card-body">
+
             @foreach($blogs->comments as $comment)
                 <div class="border rounded p-3 mb-2">
                     <strong>{{ $comment->author_name }}</strong> ·
@@ -27,8 +28,8 @@
                     <p class="mb-0">{{ $comment->comment }}</p>
                 </div>
             @endforeach
-            </div>
         </div>
+        <div class="card-body">
             <div class="card">
                 <div class="card-header">
                     <h5>Yorum Yap</h5>
@@ -49,6 +50,7 @@
                     </form>
                 </div>
             </div>
+        </div>
     </div>
 
 @endsection

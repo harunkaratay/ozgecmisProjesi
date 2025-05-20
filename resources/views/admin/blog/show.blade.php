@@ -14,7 +14,7 @@
             {!! nl2br(e($blogs->content)) !!}
         </div>
         <div class="mt-3 mb-2 d-flex justify-content-between align-items-center">
-            <a href="{{url('/home#blogs')}}" class="btn btn-secondary">Geri Dön</a>
+            <a href="{{url('/admin/blog/index')}}" class="btn btn-secondary">Geri Dön</a>
         </div>
     </div>
     <div class="card">

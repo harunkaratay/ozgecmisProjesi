@@ -13,7 +13,7 @@ class HomeController extends Controller
     }
 
     public function showBlog($id){
-        $blogs = Blog::find($id);
-        return view('public.home.show' , compact('blogs'));
+        $blogs = Blog::with('comments')->findOrFail($id);
+        return view('public.home.show', compact('blogs'));
     }
 }
