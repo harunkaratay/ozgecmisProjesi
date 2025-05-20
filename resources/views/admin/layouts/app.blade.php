@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Auth; @endphp
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -31,19 +32,16 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <div class="text-right">
-        @auth
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="{{ route('logout') }}" class="btn btn-danger">Çıkış Yap</a>
-            </form>
-        @endauth
     </div>
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Start Bootstrap</span>
-        <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{asset('panel/img/kullan.jpeg')}}"
-               alt="">
-        </span>
+        @php
+            $profileImagePath = Auth::user()->profile_image ?? 'panel/img/default-user-image.png';
+        @endphp
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+             src="{{ asset($profileImagePath) }}"
+             onerror="this.onerror=null; this.src='{{ asset('panel/img/kullan.jpeg') }}';"
+             alt="Profil Fotoğrafı">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +49,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
+            <a class="nav-link" href="{{ route('admin.profile.edit') }}">PROFİLİ DÜZENLE</a>
             <a class="nav-link" href="{{ route('blogIndex') }}">BLOGLAR</a>
             <a class="nav-link" href="{{ route('commentsIndex') }}">YORUMLAR</a>
         </ul>
     </div>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <a href="{{ route('logout') }}" class="btn btn-danger">Çıkış Yap</a>
+        </form>
     <div class="d-flex justify-content-end mt-3">
         <a href="/home" class="btn btn-primary">Anasayfaya Dön</a>
     </div>
@@ -77,7 +80,7 @@
 <script src="{{asset('panel/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
 <!-- Custom scripts for this template -->
-<script src="{{asset('panel/js/resume.min.js')}}"></script>
+<script src="{{ asset('panel/js/resume.min.js') }}"></script>
 
 <!-- Hava durumu api -->
 <script>
