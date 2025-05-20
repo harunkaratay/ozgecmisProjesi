@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="dashboard">
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="anasayfa">
         <div class="my-auto">
             <h1 class="mb-0">Muhammed Harun Karatay</span>
             </h1>
@@ -45,7 +45,7 @@
         </div>
     </section>
 
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="egitim">
         <div class="my-auto">
             <h2 class="mb-5">Egitim Bilgileri</h2>
             <div class="resume-item d-flex flex-column flex-md-row mb-5">
@@ -68,7 +68,7 @@
         </div>
     </section>
 
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="blogs">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="bloglar">
         <div class="card">
             <div class="card-header">
                 <h2 class="mb-5">Bloglar</h2>

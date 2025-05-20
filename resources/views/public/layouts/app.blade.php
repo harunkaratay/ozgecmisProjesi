@@ -51,13 +51,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#dashboard">Anasayfa</a>
+                <a class="nav-link js-scroll-trigger" href="#anasayfa">Anasayfa</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#education">Egitim</a>
+                <a class="nav-link js-scroll-trigger" href="#egitim">Egitim</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#blogs">Bloglar</a>
+                <a class="nav-link js-scroll-trigger" href="#bloglar">Bloglar</a>
             </li>
         </ul>
     </div>
