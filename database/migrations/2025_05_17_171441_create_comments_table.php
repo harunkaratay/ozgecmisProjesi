@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('blog_id')->constrained('blogs')->onDelete('cascade');
             $table->string('author_name')->nullable();
-            $table->text('comments');
+            $table->text('comment');
             $table->timestamps();
         });
     }
