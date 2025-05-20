@@ -34,11 +34,14 @@
         <span class="d-block d-lg-none">Start Bootstrap</span>
         <span class="d-none d-lg-block"></span>
         @php
-            $user = \App\Models\User::find(1); // Örnek: ilk kullanıcı
+            $user = \App\Models\User::find(1);
         @endphp
 
         @if($user && $user->profile_photo)
-            <img src="{{ asset('storage/' . $user->profile_photo) }}" alt="Kullanıcı Fotoğrafı" width="150">
+            <img src="{{ asset('storage/' . $user->profile_photo) }}"
+                 class="rounded-circle"
+                 style="width: 150px; height: 150px; object-fit: cover; border: 2px solid #ccc;"
+                 alt="Profil Fotoğrafı">
         @endif
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
