@@ -1,7 +1,7 @@
 <?php
 
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
@@ -47,7 +47,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 //profil routes
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
-    Route::put('/admin/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
 });

@@ -11,15 +11,17 @@
             @csrf
             @method('PUT')
 
-            <div class="form-group">
-                <label for="profile_image">Profil Fotoğrafı</label><br>
-                @if($user->profile_image)
-                    <img src="{{ asset($user->profile_image) }}" alt="Profil" width="120" class="mb-2"><br>
-                @endif
-                <input type="file" name="profile_image" class="form-control-file"> 
-            </div>
+            <label for="profile_photo">Profil Fotoğrafı:</label>
+            <input type="file" name="profile_photo" id="profile_photo" accept="image/*">
 
-            <button type="submit" class="btn btn-primary mt-3">Kaydet</button>
+            <button type="submit">Kaydet</button>
         </form>
+
+        @if(auth()->user()->profile_photo)
+            <div>
+                <p>Mevcut Fotoğraf:</p>
+                <img src="{{ asset('storage/' . auth()->user()->profile_photo) }}" alt="Profil Fotoğrafı" width="150">
+            </div>
+        @endif
     </div>
 @endsection

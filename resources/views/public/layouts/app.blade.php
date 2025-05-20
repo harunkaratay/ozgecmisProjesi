@@ -1,4 +1,3 @@
-@php use Illuminate\Support\Facades\Auth; @endphp
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -35,12 +34,12 @@
         <span class="d-block d-lg-none">Start Bootstrap</span>
         <span class="d-none d-lg-block"></span>
         @php
-            $profileImagePath = Auth::user()->profile_image ?? 'panel/img/default-user-image.png';
+            $user = \App\Models\User::find(1); // Örnek: ilk kullanıcı
         @endphp
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
-             src="{{ asset($profileImagePath) }}"
-             onerror="this.onerror=null; this.src='{{ asset('panel/img/kullan.jpeg') }}';"
-             alt="Profil Fotoğrafı">
+
+        @if($user && $user->profile_photo)
+            <img src="{{ asset('storage/' . $user->profile_photo) }}" alt="Kullanıcı Fotoğrafı" width="150">
+        @endif
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
