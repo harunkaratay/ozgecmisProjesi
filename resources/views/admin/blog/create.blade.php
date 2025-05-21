@@ -23,7 +23,7 @@
                                 <div class="mb-3 mt-3">
                                     <label for="category_path" class="form-label"><h4>Kategori</h4></label>
                                     <input type="text" name="category_path" class="form-control" placeholder="Örn: Yazılım,Backend,Laravel">
-                                    <small class="text-muted">Kategori zincirini virgülle ayırarak girin.</small>
+                                    <small class="text-muted">Kategori etiketlerini virgülle ayırarak girin.</small>
                                 </div>
                                 <div>
                                     <label for="exampleFormControlTextarea1" class="form-label mt-3"><h4>Makale</h4>
