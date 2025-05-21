@@ -15,7 +15,7 @@ Route::get('/', function () {
 
 
 //public route
-Route::get('/home', [HomeController::class, 'indexBlog'])->name('blogIndex');
+Route::get('/home', [HomeController::class, 'indexBlog'])->name('indexBlog');
 Route::get('/home/blog/show/{id}', [HomeController::class, 'showBlog'])->name('blogShow');
 
 //login route
@@ -41,7 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/blog/index', [BlogController::class, 'indexPage'])->name('blogIndex');
     Route::get('/admin/blog/show/{id}', [BlogController::class, 'showBlog'])->name('showBlog');
     Route::get('/admin/blog/create', [BlogController::class, 'createPage'])->name('blogCreate');
-    Route::post('/admin/blog/add', [BlogController::class, 'addPage'])->name('blogAdd');
+    Route::post('/admin/blog/add', [BlogController::class, 'addPage'])->name('blogStore');
     Route::get('/admin/blog/delete/{id}', [BlogController::class, 'deletePage'])->name('blogDelete');
 });
 
