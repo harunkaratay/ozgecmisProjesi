@@ -16,6 +16,15 @@
         </div>
         <div class="card-body">
             <div class="card-body">
+                <form method="GET" action="{{ route('blogIndex') }}" class="mb-4">
+                    <label for="category">Kategoriye Göre Filtrele:</label>
+                    <select name="category_id" id="category" onchange="this.form.submit()" class="form-control w-50 mb-3">
+                        <option value="">Tüm Kategoriler</option>
+                        @foreach ($categories as $category)
+                            @include('admin.blog.partials.category-option', ['category' => $category, 'prefix' => ''])
+                        @endforeach
+                    </select>
+                </form>
                 @if($blogs->isEmpty())
                     <p>Henüz yayınlanan bir blog yok</p>
                 @else
