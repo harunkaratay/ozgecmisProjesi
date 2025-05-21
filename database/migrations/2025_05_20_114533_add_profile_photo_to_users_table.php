@@ -9,13 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('profile_photo')->nullable();
-        });
+        if (!Schema::hasColumn('users', 'profile_photo')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('profile_photo')->nullable();
+            });
+        }
     }
-
     /**
      * Reverse the migrations.
      */
