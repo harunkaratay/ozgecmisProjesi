@@ -11,7 +11,13 @@ class Blog extends Model
     use HasFactory,SoftDeletes;
     protected $table = 'blogs';
 
+
+
     public function comments(){
         return $this->hasMany(Comment::class, 'blog_id');
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
 }
