@@ -33,6 +33,7 @@ Route::get('/cikis', function () {
 //yorum routes
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 Route::get('/admin/comments', [CommentController::class, 'index'])->name('commentsIndex');
+Route::get('/admin/comments/data', [CommentController::class, 'data'])->name('admin.comments.data');
 Route::delete('/admin/comments/{comment}', [CommentController::class, 'destroy'])->name('admin.comments.destroy');
 
 
