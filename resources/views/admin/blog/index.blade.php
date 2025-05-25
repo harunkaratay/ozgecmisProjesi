@@ -8,11 +8,6 @@
             @auth()
                 <a href="{{route('blogCreate')}}" class="btn btn-primary mb-3">Blog Ekle</a>
             @endauth
-            @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
-                    {{ session('success') }}
-                </div>
-            @endif
         </div>
         <div class="card-body">
             <div class="card-body">
