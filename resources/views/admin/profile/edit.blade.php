@@ -3,10 +3,6 @@
 @section('content')
     <div class="container">
         <h2>Profil Bilgileri</h2>
-
-        @if(session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
-        @endif
         <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
