@@ -105,7 +105,29 @@
     }
     fetchWeather();
 </script>
+<script src="{{ asset('panel/js/resume.min.js') }}"></script>
 
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    @if(session('success'))
+    Swal.fire({
+        icon: 'success',
+        title: 'Başarılı!',
+        text: '{{ session('success') }}',
+    });
+    @endif
+
+    @if($errors->any())
+    Swal.fire({
+        icon: 'error',
+        title: 'Hata!',
+        html: `{!! implode('<br>', $errors->all()) !!}`
+    });
+    @endif
+</script>
+@yield('scripts')
 </body>
 
 </html>
